@@ -16,7 +16,7 @@ COPY repos/zerotier.repo /etc/yum.repos.d/zerotier.repo
 # RUN rpm-ostree install zerotier-one && systemctl enable zerotier-one.service
 
 RUN rm /usr/share/flatpak/fedora-flathub.filter
-RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # RUN flatpak install org.mozilla.firefox
 
 RUN rpm-ostree cleanup -m

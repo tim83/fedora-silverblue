@@ -15,7 +15,7 @@ env:
 jobs:
   push-ghcr:
     name: Build and push image
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write

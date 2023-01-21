@@ -24,13 +24,15 @@ jobs:
       fail-fast: false
       matrix:
         major_version: [37]
-        image_name: ["workstation-laptop"]
+        image_name: ["workstation-laptop", "workstation"]
         include:
           - major_version: 37
             is_latest: true
             is_stable: true
           - image_name: "workstation-laptop"
             container_file: ./workstation-laptop.Containerfile.in
+          - image_name: "workstation"
+            container_file: ./workstation.Containerfile.in
     steps: 
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action

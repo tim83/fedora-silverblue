@@ -23,7 +23,7 @@ jobs:
       fail-fast: false
       matrix:
         major_version: [37]
-        image_name: ["silverblue-laptop", "silverblue", "kinoite", "kinoite-laptop", "coreos"]
+        image_name: ["silverblue-laptop", "silverblue", "kinoite", "kinoite-laptop"]
         include:
           - major_version: 37
             is_latest: true

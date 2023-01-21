@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        major_version: [stable]
+        major_version: ["stable"]
         image_name: ["coreos"]
         include:
           - major_version: stable

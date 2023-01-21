@@ -64,6 +64,7 @@ jobs:
           containerfiles: |
             ${{ matrix.container_file }}
           image: ${{ matrix.image_name }}
+          platform: linux/amd64,linux/arm64,linux/arm/v7
           tags: |
             ${{ steps.generate-tags.outputs.alias_tags }}
             ${{ steps.generate-tags.outputs.date }}

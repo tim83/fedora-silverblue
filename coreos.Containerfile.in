@@ -1,0 +1,8 @@
+ARG FEDORA_MAJOR_VERSION=stable
+ARG BASE_REPO=quay.io/fedora/fedora-coreos
+
+FROM ${BASE_REPO}:${FEDORA_MAJOR_VERSION}
+
+#include "stages/common.Containerfile"
+
+RUN rpm-ostree cleanup -m && ostree container commit

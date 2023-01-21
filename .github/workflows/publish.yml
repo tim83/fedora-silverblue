@@ -24,10 +24,13 @@ jobs:
       fail-fast: false
       matrix:
         major_version: [37]
+        image_name: ["workstation-laptop"]
         include:
           - major_version: 37
             is_latest: true
             is_stable: true
+          - image_name: "workstation-laptop"
+            container_file: ./workstation-laptop.Containerfile.in
     steps: 
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
@@ -61,8 +64,8 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           containerfiles: |
-            ./Containerfile
-          image: ${{ env.IMAGE_NAME }}
+            ${{ matrix.container_file }}
+          image: ${{ matrix.image_name }}
           tags: |
             ${{ steps.generate-tags.outputs.alias_tags }}
             ${{ steps.generate-tags.outputs.date }}

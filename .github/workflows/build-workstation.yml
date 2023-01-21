@@ -23,15 +23,15 @@ jobs:
       fail-fast: false
       matrix:
         major_version: [37]
-        image_name: ["workstation-laptop", "workstation", "kinoite", "kinoite-laptop", "coreos"]
+        image_name: ["silverblue-laptop", "silverblue", "kinoite", "kinoite-laptop", "coreos"]
         include:
           - major_version: 37
             is_latest: true
             is_stable: true
-          - image_name: "workstation-laptop"
-            container_file: ./workstation-laptop.Containerfile.in
-          - image_name: "workstation"
-            container_file: ./workstation.Containerfile.in
+          - image_name: "silverblue-laptop"
+            container_file: ./silverblue-laptop.Containerfile.in
+          - image_name: "silverblue"
+            container_file: ./silverblue.Containerfile.in
           - image_name: "kinoite-laptop"
             container_file: ./kinoite-laptop.Containerfile.in
           - image_name: "kinoite"

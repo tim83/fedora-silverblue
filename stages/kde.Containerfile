@@ -1,0 +1,1 @@
+RUN rpm-ostree cleanup -m && ostree container commit

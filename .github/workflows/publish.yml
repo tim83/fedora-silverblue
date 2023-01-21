@@ -23,7 +23,7 @@ jobs:
       fail-fast: false
       matrix:
         major_version: [37]
-        image_name: ["workstation-laptop", "workstation"]
+        image_name: ["workstation-laptop", "workstation", "kionite", "kionite-laptop"]
         include:
           - major_version: 37
             is_latest: true
@@ -32,6 +32,10 @@ jobs:
             container_file: ./workstation-laptop.Containerfile.in
           - image_name: "workstation"
             container_file: ./workstation.Containerfile.in
+          - image_name: "kionite-laptop"
+            container_file: ./kionite-laptop.Containerfile.in
+          - image_name: "kionite"
+            container_file: ./kionite.Containerfile.in
     steps: 
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action

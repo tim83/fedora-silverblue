@@ -2,7 +2,7 @@
 Description=Automatic firstboot tasks
 After=packagekit.service rpm-ostreed.service network-online.target
 ConditionKernelCommandLine=!rd.live.image
-ConditionFirstBoot=yes
+# ConditionFirstBoot=yes
 
 [Service]
 Type=oneshot

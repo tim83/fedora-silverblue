@@ -15,4 +15,3 @@ RUN rpm-ostree install tailscale && \
 COPY repos/zerotier.repo /etc/yum.repos.d/zerotier.repo
  # RUN rpm-ostree install zerotier-one && systemctl enable zerotier-one.service
 
-RUN rpm-ostree cleanup -m && ostree container commit

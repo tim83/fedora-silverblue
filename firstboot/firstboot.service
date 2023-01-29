@@ -9,4 +9,4 @@ Type=oneshot
 ExecStart=bash /etc/firstboot/firstboot.sh
 
 [Install]
-WantedBy=multi-user.target
+# WantedBy=multi-user.target

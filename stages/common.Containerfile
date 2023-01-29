@@ -2,8 +2,8 @@ RUN rpm-ostree override remove toolbox
 RUN rpm-ostree install distrobox btrfsmaintenance
 
 RUN systemctl enable btrfs-balance.timer btrfs-scrub.timer
-RUN sed -i 's/BTRFS_BALANCE_MOUNTS.*/BTRFS_BALANCE_MOUNTPOINTS=auto' /etc/sysconfig/btrfsmaintenance
-RUN sed -i 's/BTRFS_SCRUB_MOUNTS.*/BTRFS_SCUB_MOUNTPOINTS=auto' /etc/sysconfig/btrfsmaintenance
+RUN sed -i 's/BTRFS_BALANCE_MOUNTS.*/BTRFS_BALANCE_MOUNTPOINTS=auto/' /etc/sysconfig/btrfsmaintenance
+RUN sed -i 's/BTRFS_SCRUB_MOUNTS.*/BTRFS_SCUB_MOUNTPOINTS=auto/' /etc/sysconfig/btrfsmaintenance
 
 RUN sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && systemctl enable rpm-ostreed-automatic.timer
 

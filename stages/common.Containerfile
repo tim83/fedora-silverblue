@@ -1,5 +1,6 @@
 RUN rpm-ostree override remove toolbox
 RUN rpm-ostree install distrobox langpacks-nl btrfsmaintenance
+RUN systemctl enable btrfs-balance.timer btrfs-defrag.timer btrfs-scrub.timer btrfs-trim.timer
 RUN sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && systemctl enable rpm-ostreed-automatic.timer
 
 RUN cd /etc/yum.repos.d/ && \

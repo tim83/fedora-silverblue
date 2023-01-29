@@ -14,5 +14,8 @@ RUN rpm-ostree install tailscale && \
 
 COPY repos/zerotier.repo /etc/yum.repos.d/zerotier.repo
 
+COPY firstboot/firstboot.service /etc/systemd/system
+RUN systemctl enable firstboot
+
 COPY firstboot/firstboot.sh /etc/firstboot/
 COPY firstboot/scripts.d/common*.sh /etc/firstboot/scripts.d/

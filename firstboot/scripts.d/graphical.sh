@@ -11,5 +11,5 @@ flatpak remote-modify --enable flathub
 flatpak install --noninteractive flathub \
         org.mozilla.firefox \
         org.gimp.GIMP \
-        com.github.tchx84.Flatseal
+        org.libreoffice.LibreOffice
 

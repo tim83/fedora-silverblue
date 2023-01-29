@@ -1,0 +1,12 @@
+[Unit]
+Description=Automatic firstboot tasks
+After=packagekit.service rpm-ostreed.service network-online.target
+ConditionKernelCommandLine=!rd.live.image
+ConditionFirstBoot=yes
+
+[Service]
+Type=oneshot
+ExecStart=/etc/firstboot/firstboot.sh
+
+[Install]
+WantedBy=multi-user.target

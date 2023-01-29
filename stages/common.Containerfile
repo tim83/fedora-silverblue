@@ -13,5 +13,6 @@ RUN rpm-ostree install tailscale && \
 	systemctl enable tailscaled
 
 COPY repos/zerotier.repo /etc/yum.repos.d/zerotier.repo
- # RUN rpm-ostree install zerotier-one && systemctl enable zerotier-one.service
 
+COPY firstboot/firstboot.sh /etc/firstboot/
+COPY firstboot/scripts.d/common*.sh /etc/firstboot/scripts.d/

@@ -6,7 +6,7 @@ ConditionKernelCommandLine=!rd.live.image
 
 [Service]
 Type=oneshot
-ExecStart=/etc/firstboot/firstboot.sh
+ExecStart=bash /etc/firstboot/firstboot.sh
 
 [Install]
 WantedBy=multi-user.target

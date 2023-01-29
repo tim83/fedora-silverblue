@@ -1,5 +1,5 @@
 RUN rpm-ostree override remove toolbox
-RUN rpm-ostree install distrobox langpacks-nl btrfsmaintenance
+RUN rpm-ostree install distrobox btrfsmaintenance
 
 RUN systemctl enable btrfs-balance.timer btrfs-scrub.timer
 RUN sed -i 's/BTRFS_BALANCE_MOUNTS.*/BTRFS_BALANCE_MOUNTPOINTS=auto' /etc/sysconfig/btrfsmaintenance

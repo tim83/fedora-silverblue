@@ -17,6 +17,9 @@ COPY repos/zerotier.repo /etc/yum.repos.d/zerotier.repo
 # etc
 COPY etc/ssh /etc/
 
+# firewall
+RUN sed -i 's/DefaultZone.*/DefaultZone=public/' /etc/firewalld/firewalld.conf
+
 COPY firstboot/firstboot.service /etc/systemd/system
 RUN systemctl enable firstboot
 

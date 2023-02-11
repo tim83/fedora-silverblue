@@ -21,6 +21,9 @@ RUN systemctl enable sshd.service
 # etc
 COPY etc/ssh /etc/
 
+# cli tools
+RUN rpm-ostree install htop glances vim zsh borgbackup at watchdog
+
 # firewall
 RUN sed -i 's/DefaultZone.*/DefaultZone=public/' /etc/firewalld/firewalld.conf
 

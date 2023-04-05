@@ -22,7 +22,7 @@ RUN systemctl enable sshd.service
 COPY etc/ssh /etc/
 
  # cli tools
-RUN rpm-ostree install htop glances vim borgbackup
+RUN rpm-ostree install htop vim pipx
 
  # firewall
 RUN sed -i 's/DefaultZone.*/DefaultZone=public/' /etc/firewalld/firewalld.conf

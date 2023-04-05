@@ -14,17 +14,17 @@ RUN rpm-ostree install tailscale && \
 
 COPY repos/zerotier.repo /etc/yum.repos.d/zerotier.repo
 
-# remote access
+ # remote access
 RUN rpm-ostree install mosh
 RUN systemctl enable sshd.service
 
-# etc
+ # etc
 COPY etc/ssh /etc/
 
-# cli tools
+ # cli tools
 RUN rpm-ostree install htop glances vim borgbackup
 
-# firewall
+ # firewall
 RUN sed -i 's/DefaultZone.*/DefaultZone=public/' /etc/firewalld/firewalld.conf
 
 COPY firstboot/firstboot.service /etc/systemd/system

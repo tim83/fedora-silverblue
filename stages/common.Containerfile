@@ -28,8 +28,8 @@ RUN rpm-ostree install htop vim borgbackup pipx
  # firewall
 RUN sed -i 's/DefaultZone.*/DefaultZone=public/' /etc/firewalld/firewalld.conf
 
-COPY firstboot/firstboot.service /etc/systemd/system
-RUN systemctl enable firstboot
+RUN systemctl enable firstboot || \
+    ln -s /etc/systemd/system/timers.target.wants/firstboot.service /usr/lib/systemd/system/firstboot.service
 
 COPY firstboot/firstboot.sh /etc/firstboot/
 COPY firstboot/scripts.d/common*.sh /etc/firstboot/scripts.d/

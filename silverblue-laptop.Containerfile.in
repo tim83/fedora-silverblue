@@ -9,4 +9,5 @@ FROM ${BASE_REPO}:${FEDORA_MAJOR_VERSION}
 #include "stages/gnome.Containerfile"
 #include "stages/laptop.Containerfile"
 
+RUN rm -rf /tmp/* /var/*
 RUN rpm-ostree cleanup -m && ostree container commit

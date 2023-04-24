@@ -18,8 +18,9 @@ COPY repos/zerotier.repo /etc/yum.repos.d/zerotier.repo
 RUN rpm-ostree install mosh
 RUN systemctl enable sshd.service
 
- # etc
-COPY etc/ssh /etc/
+ # Copy system files
+COPY etc /etc/
+COPY usr /usr
 
  # cli tools
 RUN rpm-ostree install htop vim borgbackup pipx

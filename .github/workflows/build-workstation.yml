@@ -23,7 +23,7 @@ jobs:
       fail-fast: false
       matrix:
         major_version: [37, 38]
-        image_name: ["silverblue"] # "silverblue-laptop", "kinoite", "kinoite-laptop"
+        image_name: ["silverblue", "kinoite"] # "silverblue-laptop", "kinoite-laptop"
         include:
           - major_version: 37
             is_latest: false
@@ -37,8 +37,8 @@ jobs:
             container_file: ./silverblue.Containerfile.in
           # - image_name: "kinoite-laptop"
           #   container_file: ./kinoite-laptop.Containerfile.in
-          # - image_name: "kinoite"
-          #   container_file: ./kinoite.Containerfile.in
+          - image_name: "kinoite"
+            container_file: ./kinoite.Containerfile.in
     steps: 
       - name: Checkout Push to Registry action
         uses: actions/checkout@v3

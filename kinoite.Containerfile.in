@@ -1,5 +1,5 @@
 ARG FEDORA_MAJOR_VERSION=37
-ARG BASE_REPO=quay.io/repository/fedora-ostree-desktops/kinoite
+ARG BASE_REPO=quay.io/fedora/fedora-kinoite
 
 FROM ${BASE_REPO}:${FEDORA_MAJOR_VERSION}
  # See https://pagure.io/releng/issue/11047 for final location

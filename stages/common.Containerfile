@@ -30,4 +30,4 @@ RUN systemctl enable firstboot || \
     ln -s /etc/systemd/system/timers.target.wants/firstboot.service /usr/lib/systemd/system/firstboot.service
 
 COPY firstboot/firstboot.sh /etc/firstboot/
-COPY firstboot/scripts.d/common*.sh /etc/firstboot/scripts.d/
+# COPY firstboot/scripts.d/common*.sh /etc/firstboot/scripts.d/

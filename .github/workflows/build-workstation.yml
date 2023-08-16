@@ -22,15 +22,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        major_version: [37, 38]
+        major_version: [38]
         image_name: ["silverblue", "kinoite"] # "silverblue-laptop", "kinoite-laptop"
         include:
-          - major_version: 37
-            is_latest: false
-            is_stable: true
           - major_version: 38
             is_latest: true
-            is_stable: false
+            is_stable: true
           # - image_name: "silverblue-laptop"
           #   container_file: ./silverblue-laptop.Containerfile.in
           - image_name: "silverblue"

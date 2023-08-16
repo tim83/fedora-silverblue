@@ -12,10 +12,6 @@ RUN cd /etc/yum.repos.d/ && \
 RUN rpm-ostree install tailscale && \
 	systemctl enable tailscaled
 
-COPY repos/zerotier.repo /etc/yum.repos.d/zerotier.repo
-RUN rpm-ostree install zerotier-one && \
-	systemctl enable zerotier-one
-
  # remote access
 RUN rpm-ostree install mosh
 RUN systemctl enable sshd.service
